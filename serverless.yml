@@ -1,4 +1,4 @@
-service: sls-notes
+service: notes-sls
 
 provider:
   name: aws
