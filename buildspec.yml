@@ -2,6 +2,8 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 12.x
     commands:
       - echo Installing Serverless...
       - npm install -g serverless
@@ -13,7 +15,8 @@ phases:
     commands:
       - echo Deployment started on `date`
       - echo Deploying with the Serverless Framework
-      - sls deploy -v -s $ENV_NAME
+      - echo env var $ENV_NAME
+      - sls deploy
   post_build:
     commands:
       - echo Deployment completed on `date`
