@@ -1,10 +1,10 @@
-service: sls-notes
+service: notes-sls
 
 provider:
   name: aws
   runtime: nodejs12.x
   region: us-east-1
-  stage: prod
+  stage: dev
   memorySize: 128
   timeout: 5
   endpointType: regional
