@@ -1,4 +1,4 @@
-service: notes-sls
+service: inotes-sls
 
 plugins:
   - serverless-offline
@@ -93,9 +93,7 @@ resources:
             KeyType: HASH
           - AttributeName: timestamp
             KeyType: RANGE
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
+        BillingMode: PAY_PER_REQUEST
         GlobalSecondaryIndexes:
           - IndexName: note_id-index
             KeySchema:
@@ -103,9 +101,7 @@ resources:
                 KeyType: HASH
             Projection:
               ProjectionType: ALL
-            ProvisionedThroughput:
-              ReadCapacityUnits: 1
-              WriteCapacityUnits: 1
+            BillingMode: PAY_PER_REQUEST
 
 custom:
   allowedHeaders:
@@ -120,8 +116,8 @@ custom:
     - app_user_id
     - app_user_name
   customDomain:
-    domainName: api.weliveitapp.com
-    basePath: 'v1'
-    stage: ${self:provider.stage}
-    certificateName: weliveitapp.com
-    createRoute53Record: true
+  domainName: api.e-newton.com
+  basePath: 'v1'
+  stage: ${opt:stage, self:provider.stage}
+  certificateName: e-newton.com
+  createRoute53Record: true
