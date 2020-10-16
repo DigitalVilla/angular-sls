@@ -1,4 +1,4 @@
-service: inotes-sls
+service: notes-sls
 
 plugins:
   - serverless-offline
