@@ -116,8 +116,8 @@ custom:
     - app_user_id
     - app_user_name
   customDomain:
-  domainName: api.e-newton.com
+  domainName: inotes.weliveitapp.com
   basePath: 'v1'
   stage: ${opt:stage, self:provider.stage}
-  certificateName: e-newton.com
+  certificateName: weliveitapp.com
   createRoute53Record: true
